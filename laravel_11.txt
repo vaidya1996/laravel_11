@@ -1,0 +1,10 @@
+    ++++++++++++++++++++++++++++++++++++++++++
+    ===== LARAVEL !!
+    ++++++++++++++++++++++++++++++++++++++++++
+  
+
+    1. Check PHP Version : 'php -v' 
+    2. Create Project : 'composer create-project Laravel/Laravel:^11.0 app-name'
+    3. If by mistake we deletes any file then , : 'php artisan list'
+          and then choose commands from here to re publish, update or others.
+    4. 
