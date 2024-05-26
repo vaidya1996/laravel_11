@@ -7,4 +7,9 @@
     2. Create Project : 'composer create-project Laravel/Laravel:^11.0 app-name'
     3. If by mistake we deletes any file then , : 'php artisan list'
           and then choose commands from here to re publish, update or others.
-    4. 
+    4. To create resource controller : 'php artisan make:controller controllerName --resource'
+    5. To use artisan for creating different-different files : 'php artisan list'
+    6. To show all routes : 'php artisan route:list'
+    7. Creating resource route :
+         a] First you have to create resource controller
+         b] the create route : 'route::resource("sample1", SampleController::class);'
