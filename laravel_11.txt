@@ -13,3 +13,104 @@
     7. Creating resource route :
          a] First you have to create resource controller
          b] the create route : 'route::resource("sample1", SampleController::class);'
+    8. To create migration and model simultaneously : 'php artisan make:model Blog --migration'
+    9. This is complete migration structure of Blog table :
+
+         public function up(): void
+        {
+           Schema::create('blogs', function (Blueprint $table) {
+             $table->id();
+             $table->string('title', 150);
+             $table->text("description");
+             $table->foreignId("user_id")->constrained("users");
+             $table->timestamps();
+           });
+        }
+   
+     10. To use this migration : 'php artisan migrate'
+     !!. Creating factory class to generate dummy data :
+         a] First make factory : 'php artisan make:factory BlogFactory --model=Blog' [This is for my blog model]
+         b] Make method such that to fill fields :
+
+            public function definition(): array
+           {
+             return [
+              "title" => fake()->realText(50),
+              "description" => fake()->realText(250),
+              "user_id" => 1
+             ];
+           }
+
+         c] Then inside seeders folder > DatabaseSeeder.php 
+                                               |
+                                        use App\Models\Blog;
+            Inside run method make it like what we need :
+              
+             public function run(): void
+            {
+               // User::factory(10)->create();
+
+               User::factory()->create([
+               'name' => 'Test User',
+               'email' => 'test@example.com',
+               "id" => 1,
+               "password" => bcrypt("12345678"),
+             ]);
+
+              //for blog data
+              Blog::factory(100)->create();
+            }
+        
+          d] After this run command : 'php artisan db:seed'
+
+    11. Creating Controller for our Blog :
+        'php artisan make:controller BlogController --resource --model=blog'
+
+    12. Setting up resource route for this resource class :
+         Route::resource("blog", BlogController::class);
+
+    13. Showing CSS
+         a] 'npm install'
+         b] 'npm run build'
+         c] add this into your layout :
+                 @vite(['resources/css/app.css', 'resources/js/app.js'])
+         d] If frequent changes should be do then start vite server : 'npm start dev'
+
+    14. Form Validation :
+        a] Define path of form submission
+        b] Go to controller and validate the fields :
+
+            $request->validate([
+             "title"=> "required|string",
+             "desc"=>"required|string"
+           ]);
+       
+        c] To resolve expired error inside form tag write : @csrf [Cross side request forgery]
+        d] To show old value after error : value="{{old('name of field')}}"
+
+    15. Submitting form data into DB :
+        a] 
+
+    16. For update use : @method("PUT") inside the update form
+
+    17. Authentication :
+       -------------------
+       BREEZE [Authentication System]
+       : 'composer require Laravel/breeze'
+       : Before running 'breeze:install' command take copy of web.php and app.css
+       : After running this command you get a UI with options select 
+          : Blade with Alpine 
+          : select default and press enter
+       : After installing create a middleware and paste all routes which we recently take a backup and also paste all css into
+         app.css file and run : 'npm run build'
+
+
+
+
+
+
+
+
+
+
+
