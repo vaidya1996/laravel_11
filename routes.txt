@@ -47,6 +47,40 @@
 
   : Make restrictions -
     : Route::get("admin/{id}/{name?}", "AdminController@index")->where(['id'=>'[0-9]+']); 
+
+
+# Name Routes : to get the URL for making buttons or redirection we use " url('/admin', []); " this inbuild function.
+
+# For changing purpose we pass name of the url so we can change a single place and it got changed everywhere.
+  : Route::get("admin/{id}/{name?}", "AdminController@index")->where(['id'=>'[0-9]+'])->name('admin-home');
+  : Now we have to use " route('admin-home', []); " method instead of " url('/admin', []); " this.
+
+# Route groups :
+  : Route::group([
+                   'middleware'=>'web',
+                   'namespace'=>'Admin',
+                  // 'as'=>'admin-',
+                   'prefix'=>'admin-panel'
+                 ], function() {
+
+                   Route::get("/");
+                   Route::delete("/delete");
+                   etc.
+
+               });
+
+  :: NOTE - We can also nest our group route.
+
+# To handle any request instead of multiple routes we can use a single route -
+  : Route::any('/admin', function() {
+
+    });
+
+  : Route::match(['put', 'patch'], '/admin', function() {
+      
+    });
+  
+  
    
 
 
