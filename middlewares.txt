@@ -1,0 +1,22 @@
+++++++++++++++++++++++++
+==== Middlewares
+++++++++++++++++++++++++
+
+# For creating new pass : 'php artisan make:middleware loggerMiddleware' [dummy command.]
+# After this write your logics inside created middleware.
+# Now register this middleware inside Kernel.php located in Http folder.
+  : \App\Http\Middleware\LoggerMiddleware::class [Inside first array for all requests. Global middleware]
+  : Route Middleware -
+    : passed as a key value and use key inside our route--
+      
+      protected $routeMiddleware = [
+       'logger' => \App\Http\Middleware\LoggerMiddleware::class
+      ];
+
+    : Inside route -
+      Route::get('/', function() {
+
+      })->middleware('logger');
+
+  : Middleware Groups -
+    
