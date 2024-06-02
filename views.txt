@@ -1,0 +1,20 @@
+++++++++++++++++++++++
+==== Views
+++++++++++++++++++++++
+
+# Passing data into view from route -
+  : Route::get('/', function() {
+
+        $users = ['Himanshu', 'Sudhanshu', 'Priyanshu'];
+        return view('home', ['users'=>$users]);
+
+                       OR
+ 
+        return view('home')->with('users', $users); # Note - We can chain with() as many times wants.
+
+    })
+
+# Removing public from url -
+  a] rename the public folder.
+  b] - cut htaccess file from public directory.
+     - Paste it into root folder and also rename the server.php to index.php.
