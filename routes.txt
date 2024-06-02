@@ -1,0 +1,54 @@
+++++++++++++++++++
+===== ROUTE
+++++++++++++++++++
+
+# Route::get("/", function() {
+       return view("view_name");
+  });
+  : Route is a class and get is a method of that class which takes two args 1. path 2. callback.
+  : To call controller 
+    Route::get("admin", "AdminController@index"); here @index is the method name.
+
+# Creating complete MVC :
+  : MAke controller ::
+    
+    namespace App\Http\Controllers;
+
+    class AdminController extends controller {
+      
+        public function index() {
+          return view("index");
+        }
+
+    }
+
+  : Make view - create a view with name index.blade.php
+  : Set route -
+       : Route::get("admin", "AdminController@index");
+
+# Passing paramenters from routes -
+  : Route::get("admin/{id}", "AdminController@index");
+  : Receive in controller / view
+    :
+       namespace App\Http\Controllers;
+
+       class AdminController extends controller {
+      
+           public function index( $id ) {
+             echo $id;
+             return view("index");
+           }
+
+       }
+   : Passing 2 params 
+     : Route::get("admin/{id}/{name?}", "AdminController@index"); 
+     : NOTE - ? tells that 2nd param is optional. and if we want to make all params mandatory then we have to pass all params and 
+              receive all params in controller or view.
+
+  : Make restrictions -
+    : Route::get("admin/{id}/{name?}", "AdminController@index")->where(['id'=>'[0-9]+']); 
+   
+
+
+
+
