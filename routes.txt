@@ -79,6 +79,39 @@
   : Route::match(['put', 'patch'], '/admin', function() {
       
     });
+
+  : to show all routes with mapping 
+    : 'php artisan' then 'php artisan route:list'
+
+  : Route Controller 
+    a] Define route -
+       Route::controller('admin', 'AdminController');
+   
+    b] Define Controller
+       class AdminController extends Controller {
+
+          public function getDashboard() {
+             
+          }
+
+          public function getAdduser() {
+
+          }
+
+          public function postAddUser() {
+
+          }
+
+         // Defining missing method for unknown route rendering or handling error requests.
+
+          public function missingMethod($params = []) {
+             dd($params);
+          } 
+
+       }
+      :: Note - Must follow naming convention.
+
+
   
   
    
