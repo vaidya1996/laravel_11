@@ -1,0 +1,69 @@
++++++++++++++++++++++++++++++++++++++
+===== LARAVEL 5.2 
++++++++++++++++++++++++++++++++++++++
+
+# Composer : Package manager.
+
+   a] For auto load the files or packages :-
+
+        include_once("vendor/autoload.php");
+
+   b] Steps to initiate Composer 
+      
+           1. 'composer init'
+               : Package name = vendor/package
+               : Description = ""
+               : Author = format Himanshu <himanshu@gmail.om>
+            
+           2. See packages.org for more info to manage packages.
+           3. Update packages : 'composer update'
+  
+   c] Creating project : 'composer create-project Laravel/Laravel myApp'
+   d] Folder Structure : 
+                       -- app :
+                              -- console : commands
+                              -- events : ex: if user register then send mail
+                              -- exceptions : exception handling 
+                              -- Http :
+                                      -- controllers
+                                      -- middlewares
+                                      -- requests : for role based authentication / permissions 
+                                                  : form validations
+                                      -- Kernel.php
+                                      -- routes : Routes of the controllers and views
+                             -- Jobs : tasks
+                             -- Listeners : The action on events comes inside this ex : registration [events] send mail [listeners]
+                             -- Policies : For packages we have to make policies comes inside this.
+                             -- providers : Service providers
+                             -- User.php [Model]
+
+                        -- bootstrap : for the use of application
+                        -- config : configurations
+                        -- database :
+                                   -- Factories : For creating dummy data
+                                   -- Migrations 
+                                   -- Seeds : To insert admin details for login into db etc. [for default setups in DB]
+                                            : Ex: out of 8 themes there is 1 default.
+                        -- public : inside this we kept our css, js files etc.
+                        -- resources :
+                                     -- assets : 
+                                               -- sass
+                        -- lang : define multi languages [Hindi English etc.]
+                        -- views : inside this all views are presents.
+                        -- storage : inside this temp files are stored.
+                        -- tests 
+                        -- vendor : all packages required for the app
+                        -- .env : all environment variables
+                        -- artisan : command lines 
+                        -- 
+
+
+
+
+
+
+
+
+
+
+
