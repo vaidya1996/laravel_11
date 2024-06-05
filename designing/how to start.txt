@@ -1,0 +1,21 @@
++++++++++++++++++++++++++++++++++
+========Start Thinking
++++++++++++++++++++++++++++++++++
+
+# Before start gather info : [Researchs]
+  : Type of bussiness ?
+  : Main goal of the bussiness ?
+  : Target audience ? [Visitors]
+  : Who are the competitor ? [Relate with others same]
+  : Branding [colors, font etc.]
+  : Gathering all the informations
+  
+# Inspiration :
+           |
+      ----------------------------------------------------------------
+      |                                  |                           |
+    Layout                            Graphics                     Fonts
+      |                                  |                           |
+    dribbble.com                      freepic.com                 dafont.com [click on 100% free then select]
+    behance.net                       flaticons.com               fonts.google.com
+    uplabs.com                        pixabay.com [free]

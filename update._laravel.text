@@ -1,0 +1,7 @@
+++++++++++++++++++++++++++
+===== Updating Project
+++++++++++++++++++++++++++
+
+# To see version -
+  : Go to the root directory of project.
+  : 'php artisan --version'
